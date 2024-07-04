@@ -5,8 +5,8 @@
         </div>
         <div class="hidden md:flex space-x-4">
             <a href="{% url 'home' %}" class="text-gray-300 hover:text-white">Home</a>
-            <a href="{% url 'home' %}" class="text-gray-300 hover:text-white">About</a>
-            <a href="{% url 'home' %}" class="text-gray-300 hover:text-white">Contact</a>
+            <a href="{% url 'contact' %}" class="text-gray-300 hover:text-white">Contact</a>
+            <a href="{% url 'pricing' %}" class="text-gray-300 hover:text-white">Pricing</a>
             {% if 'user.is_authenticated' %}
                 <a href="{% url 'account_signup' %}" class="text-gray-300 hover:text-white">Sign up</a>
                 <a href="{% url 'account_login' %}" class="text-gray-300 hover:text-white">Login</a>
@@ -28,8 +28,8 @@
     <div id="menu" class="hidden md:hidden">
 
         <a href="{% url 'home' %}" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Home</a>
-        <a href="{% url 'home' %}" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">About</a>
-        <a href="{% url 'home' %}" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Contact</a>
+        <a href="{% url 'pricing' %}" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Pricing</a>
+        <a href="{% url 'contact' %}" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Contact</a>
         {% if 'user.is_authenticated' %}
         <a href="{% url 'account_signup' %}" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Sign up</a>
         <a href="{% url 'account_login' %}" class="block px-4 py-2 text-sm text-gray-300 hover:text-white">Login</a>
