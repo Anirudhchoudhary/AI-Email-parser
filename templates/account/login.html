@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<h1 class="text-gray-600 text-3xl font-bold mb-6 mx-auto text-center">Login Now</h1>
+<div class="flex justify-center">
+    <form action="{% url 'account_login' %}" method="post"
+        class="w-full max-w-lg bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="id_username">
+                Username
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="text" name="username" placeholder="Username" autocomplete="username" minlength="1" maxlength="150"
+                required id="id_username">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="id_password1">
+                Password
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="password" name="password1" placeholder="Password" autocomplete="new-password" required
+                id="id_password1">
+            <span class="text-gray-600 text-xs italic"></span>
+        </div>
+
+        <div class="flex items-center justify-between">
+            <button
+                class="bg-blue-300 hover:bg-blue-400 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
+<div class="text-center">
+    <p> Don't have an account ? <a class="text-blue-700 underline" href="{%url 'account_signup' %}"> Sign up</a></p>
+</div>
+{% endblock %}
