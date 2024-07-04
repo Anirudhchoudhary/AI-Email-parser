@@ -3,4 +3,16 @@ static
 media
 .env
 package-lock.*
+__pycache__/
+
+# Django stuff:
+*.log
+*.pot
 *.pyc
+db.sqlite3
+media/
+
+# Development tools
+.vscode/
+.idea/
+.pytest_cache/
