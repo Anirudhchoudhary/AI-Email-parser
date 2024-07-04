@@ -18,14 +18,17 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import Home
+from .views import Home, PricingPage, about, contact
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
-
     path("", Home.as_view(), name="home"),
+    path("pricing/", PricingPage.as_view(), name="pricing"),
+    path('about/', about, name='about'),
+    path('contact/', contact, name='contact'),
+
 ]
 
 urlpatterns += static(settings.STATIC_URL, documents_root=settings.STATIC_ROOT)

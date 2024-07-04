@@ -6,11 +6,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/custom/main.css' %}">
-    <title>Ai Email praser</title>
+    <title>{% block title %}Home - Ai Email praser{% endblock %}</title>
 </head>
 <body>
     {% include 'base/navbar.html' %}
-    {% block content %}
-    {% endblock %}
+    <main class="container mx-auto p-8">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="bg-white shadow mt-8">
+        <div class="container mx-auto px-4 py-4">
+            <p class="text-center text-gray-600">&copy; 2024 Email Parser. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
