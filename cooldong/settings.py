@@ -29,9 +29,13 @@ env_values = dotenv_values(ENV_FILE_PATH)
 SECRET_KEY = env_values["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env_values("DEBUG", False)
+ENV = env_values("ENV", "prod")
 
 ALLOWED_HOSTS = []
+
+if ENV == "prod":
+    ALLOWED_HOSTS.appen(env_values["HOST"])
 
 
 # Application definition
